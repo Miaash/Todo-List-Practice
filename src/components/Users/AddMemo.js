@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import classes from "./AddMemo.module.css";
 import Card from "../UI/Card";
-import Button from "../UI/Button";
+import SubmitButton from "../UI/SubmitButton";
 
 
 const AddMemo = (props) => {
@@ -18,7 +18,13 @@ const AddMemo = (props) => {
     }
 
     const submitHandler = (event) => {
-        event.preventDafault();
+        event.preventDefault();
+        props.onAddToDo(enteredDate, enteredToDo);
+        setEnteredDate('');
+        setEnteredToDo('');
+        console.log("In AddMemo");
+        console.log(enteredDate, enteredToDo);
+
     }
 
     return (
@@ -29,6 +35,7 @@ const AddMemo = (props) => {
                 type="date" 
                 id="date" 
                 onChange={enteredDateHandler}
+                value={enteredDate}
                 />
                 <label htmlFor="content">To-do</label>
                 <input 
@@ -36,8 +43,9 @@ const AddMemo = (props) => {
                 id="content" 
                 placeholder="Enter your To-do" 
                 onChange={enteredToDoHandler}
+                value={enteredToDo}
                 />
-                <Button type="submit"/>
+                <SubmitButton type="submit">Add</SubmitButton>
             </form>
         </Card>
     )

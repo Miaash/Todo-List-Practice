@@ -1,0 +1,22 @@
+.removebtn {
+    display: flex;
+    text-align: center;
+    border: 1px solid #9a9a9a;
+    border-radius: 10px;
+    background-color: #9a9a9a;
+    color: rgb(44, 42, 42);
+    margin: 0.5rem 0 ;
+    width: 50px;
+    height: 25px;
+    box-shadow: 3px 3px 3px black;
+    transition-duration: 0.08s;
+ }
+
+ .removebtn:hover {
+    background-color: #545454;
+    color: white;
+ }
+
+ .removebtn:active {
+    box-shadow: none;
+ }
